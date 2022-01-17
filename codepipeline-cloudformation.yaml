@@ -22,7 +22,7 @@ Parameters:
     Description: OAuth token used by AWS CodePipeline to connect to GitHub
     NoEcho: true
     Type: String
-    Default: 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
+    Default: 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
 
 Resources:
   CodePipelineArtifactStoreBucket:
@@ -99,7 +99,7 @@ Resources:
                 Repo: !Ref RepositoryName
                 Branch: !Ref BranchName
                 OAuthToken: !Ref GitHubOAuthToken
-                PollForSourceChanges: false
+                PollForSourceChanges: true
               RunOrder: 1
         - Name: Beta
           Actions:
