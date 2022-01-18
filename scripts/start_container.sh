@@ -2,7 +2,7 @@
 
 set -e
 
-cd cicd/
+#cd home/ubuntu/cicd/
 
 mvn clean install -Dmaven.test.skip=true
 
