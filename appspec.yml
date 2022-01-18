@@ -6,7 +6,7 @@ hooks:
       timeout: 50
       runas: ubuntu
   AfterInstall:
-    - location: scripts/pull_image.sh
+    - location: scripts/before_install.sh
       timeout: 100
       runas: ubuntu
   ApplicationStart:
