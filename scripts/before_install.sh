@@ -4,7 +4,7 @@
 DIR="/home/ec2-user/cicd"
 if [ -d "$DIR" ]; then
   echo "${DIR} exists"
-  rm -rf ${DIR}
+  sudo rm -rf ${DIR}
   mkdir ${DIR}
 else
   echo "Creating ${DIR} directory"
