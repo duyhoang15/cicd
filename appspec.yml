@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/cicd
+    destination: /home/ubuntu/cicd
 hooks:
   ApplicationStop:
     - location: scripts/kill_container.sh
