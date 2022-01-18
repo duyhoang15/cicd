@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-mvn clean install -Dmaven.test.skip=true
-
 pwd
+
+mvn clean install -Dmaven.test.skip=true
 
 docker build -t cicd:latest .
 
