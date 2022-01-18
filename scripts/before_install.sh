@@ -9,9 +9,9 @@ sudo chmod 666 /var/run/docker.sock
 DIR="/home/ubuntu/cicd"
 if [ -d "$DIR" ]; then
   echo "${DIR} exists"
-  rm -rf ${DIR}
-  mkdir ${DIR}
+  sudo rm -rf ${DIR}
+  sudo mkdir ${DIR}
 else
   echo "Creating ${DIR} directory"
-  mkdir ${DIR}
+  sudo mkdir ${DIR}
 fi
