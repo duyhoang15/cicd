@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/i7j8m1k6
+  build:
+    commands:
+      - mvn clean install -Dmaven.test.skip=true
+      - echo Build started on `date`
+      - echo Building the Docker image...          
+      - docker build -t cicd:latest .
+      - docker tag cicd:latest public.ecr.aws/i7j8m1k6/cicd:latest      
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push public.ecr.aws/i7j8m1k6/cicd:latest
+artifacts:
+  file:
+    - '**/*'
+  base-directory: base_location
+  name: dev-backend-build-artifact
+  discard-paths: no
