@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-pwd
+set -e
+
+cd cicd/
 
 mvn clean install -Dmaven.test.skip=true
 
