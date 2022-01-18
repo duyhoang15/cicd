@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+#install maven
+sudo apt-get install -y maven
+
 #create our working directory if it doesnt exist
 DIR="/home/ec2-user/cicd"
 if [ -d "$DIR" ]; then
