@@ -5,6 +5,8 @@ sudo apt-get install -y maven
 
 sudo chmod 666 /var/run/docker.sock
 
+docker rm -f cmccicd || true
+
 #create our working directory if it doesnt exist
 DIR="/home/ubuntu/cicd"
 if [ -d "$DIR" ]; then

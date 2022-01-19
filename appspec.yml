@@ -4,10 +4,10 @@ files:
   - source: /
     destination: /home/ubuntu/cicd
 hooks:
-  ApplicationStop:
-    - location: scripts/kill_container.sh
-      timeout: 50
-      runas: ubuntu
+  # ApplicationStop:
+  #   - location: scripts/kill_container.sh
+  #     timeout: 50
+  #     runas: ubuntu
   BeforeInstall:
     - location: scripts/before_install.sh
       timeout: 100
