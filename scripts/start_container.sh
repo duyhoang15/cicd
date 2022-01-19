@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+sudo chmod -R 777 /home/ubuntu/cicd
 
 cd /home/ubuntu/cicd
 
