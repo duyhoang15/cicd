@@ -21,8 +21,8 @@ phases:
       - printf '[{"name":"cmc-task","imageUri":"%s"}]' public.ecr.aws/i7j8m1k6/cicd:latest > imagedefinitions.json
       - cat imagedefinitions.json
 artifacts:
-  file:
+  files:
     - '**/*'
-    - imagedefinitions.json
-    - artifact-1.0.jar
-  discard-paths: yes
+  base-directory: base_dir
+  name: build-artifact-name
+  discard-paths: no
