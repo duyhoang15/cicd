@@ -20,6 +20,7 @@ phases:
 artifacts:
   file:
     - '**/*'
+    - imagedefinitions.json
   base-directory: base_location
   name: dev-backend-build-artifact
   discard-paths: no
