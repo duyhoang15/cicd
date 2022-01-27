@@ -19,9 +19,4 @@ phases:
       - docker push public.ecr.aws/i7j8m1k6/cicd:latest
       - printf '[{"name":"cmc-task","imageUri":"%s"}]' public.ecr.aws/i7j8m1k6/cicd:latest > imagedefinitions.json
 artifacts:
-  file:
-    - '**/*'
-    - imagedefinitions.json
-  base-directory: base_location
-  name: dev-backend-build-artifact
-  discard-paths: no
+  file: imagedefinitions.json
