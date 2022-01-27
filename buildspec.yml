@@ -3,14 +3,14 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - chmod 666 /var/run/docker.sock
       - echo Logging in to Amazon ECR...
       - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/i7j8m1k6
   build:
     commands:
       - mvn clean install -Dmaven.test.skip=true
       - echo Build started on `date`
-      - echo Building the Docker image...          
+      - echo Building the Docker image...
+      - chmod 666 /var/run/docker.sock
       - docker build -t cicd:latest .
       - docker tag cicd:latest public.ecr.aws/i7j8m1k6/cicd:latest      
   post_build:
