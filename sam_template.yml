@@ -7,11 +7,11 @@ Resources:
     Properties:
       Handler: index.lambda_handler
       Runtime: nodejs12.x
-      #CodeUri: .
-      InlineCode: |
-                  exports.lambda_handler = function (event, context) {
-                      context.succeed('hello world');
-                  };
+      CodeUri: .
+      # InlineCode: |
+      #             exports.lambda_handler = function (event, context) {
+      #                 context.succeed('hello world');
+      #             };
       Description: A starter AWS Lambda function.
       MemorySize: 128
       Timeout: 3
