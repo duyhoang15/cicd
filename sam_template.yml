@@ -5,9 +5,13 @@ Resources:
   helloworldpython:
     Type: 'AWS::Serverless::Function'
     Properties:
-      Handler: index.handler #ambda_function.lambda_handler
+      Handler: index.lambda_handler
       Runtime: nodejs12.x
-      CodeUri: .
+      #CodeUri: .
+      InlineCode: |
+                  exports.lambda_handler = function (event, context) {
+                  context.succeed('hello world');
+                  };
       Description: A starter AWS Lambda function.
       MemorySize: 128
       Timeout: 3
