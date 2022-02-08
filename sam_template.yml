@@ -6,12 +6,8 @@ Resources:
     Type: 'AWS::Serverless::Function'
     Properties:
       Handler: lambda_function.lambda_handler
-      Runtime: nodejs12.x
+      Runtime: node.js 12.x
       CodeUri: .
-      # InlineCode: |
-      #             exports.lambda_handler = function (event, context) {
-      #                 context.succeed('hello world');
-      #             };
       Description: A starter AWS Lambda function.
       MemorySize: 128
       Timeout: 3
